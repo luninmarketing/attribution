@@ -15,7 +15,7 @@ WITH forms_base AS (
         action_day,
         unique_visitor_id,
         email,
-        {{ dbt_utils.surrogate_key(['action_time', 'asset_id','email' }} AS touchpoint_id
+        {{ dbt_utils.surrogate_key(['action_time', 'asset_id','email']}} AS touchpoint_id
     FROM {{ref('forms')}}
 
 --), landing_pages_base AS (
